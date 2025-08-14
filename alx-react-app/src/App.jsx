@@ -1,12 +1,32 @@
 import WelcomeMessage from './components/WelcomeMessage';
+
+function App() {
+  return (
+    <div>
+      <WelcomeMessage />
+    </div>
+  );
+}
+
+export default App;
+
+
 function WelcomeMessage() {
-    return (
+  function App() {
+  return (
+    <div>
+      <WelcomeMessage />
+    </div>
+  );
+}
+
+
         <div>
             <h1>Hello everyone, I am learning React at ALX!</h1>
             <p>This is a simple JSX component.</p>
             <p>I am learning about JSX!</p>
         </div>
-    );
+    
   }
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
@@ -41,5 +61,3 @@ function App() {
     </>
   )
 }
-
-export default App
