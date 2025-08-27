@@ -2,7 +2,7 @@ import Header from './Header';
 import MainContent from './MainContent';
 import Footer from './Footer';
 
-export default function App() {
+function App() {
   return (
     <div>
       <Header />
@@ -11,3 +11,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
