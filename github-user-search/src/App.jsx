@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { fetchUser } from "./services/githubApi";
+import SearchBar from "./components/SearchBar";
+import UserCard from "./components/UserCard";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -17,23 +19,8 @@ function App() {
   return (
     <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
       <h1>GitHub User Search</h1>
-      <input
-        type="text"
-        placeholder="Enter GitHub username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-
-      {user && (
-        <div style={{ marginTop: "1rem" }}>
-          <img src={user.avatar_url} alt={user.login} width="100" />
-          <h2>{user.name || user.login}</h2>
-          <a href={user.html_url} target="_blank" rel="noreferrer">
-            View Profile
-          </a>
-        </div>
-      )}
+      <SearchBar username={username} setUsername={setUsername} onSearch={handleSearch} />
+      <UserCard user={user} />
     </div>
   );
 }
