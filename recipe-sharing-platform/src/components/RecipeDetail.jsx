@@ -19,14 +19,14 @@ function RecipeDetail() {
     );
   }
 
-  // Example ingredients and steps (mocked for now)
+  // Example ingredients and instructions
   const ingredients = [
     "1 cup flour",
     "2 eggs",
     "1/2 cup milk",
     "Salt to taste"
   ];
-  const steps = [
+  const instructions = [
     "Preheat oven to 180°C.",
     "Mix ingredients together.",
     "Bake for 25 minutes.",
@@ -65,9 +65,9 @@ function RecipeDetail() {
       </div>
 
       <div>
-        <h2 className="text-2xl font-semibold mb-2">Cooking Steps</h2>
+        <h2 className="text-2xl font-semibold mb-2">Instructions</h2>
         <ol className="list-decimal list-inside text-gray-700">
-          {steps.map((step, index) => (
+          {instructions.map((step, index) => (
             <li key={index} className="mb-1">{step}</li>
           ))}
         </ol>
