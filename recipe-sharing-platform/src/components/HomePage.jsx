@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import RecipeCard from "./RecipeCard";
 import data from "../data.json";
 
 function HomePage() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    // Simulate fetching data
     setRecipes(data);
   }, []);
 
@@ -18,12 +16,20 @@ function HomePage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {recipes.map((recipe) => (
-          <RecipeCard
+          <div
             key={recipe.id}
-            title={recipe.title}
-            summary={recipe.summary}
-            image={recipe.image}
-          />
+            className="bg-white rounded-lg shadow-md overflow-hidden m-4 hover:shadow-xl hover:scale-105 transform transition duration-300"
+          >
+            <img
+              src={recipe.image}
+              alt={recipe.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-bold text-gray-800">{recipe.title}</h2>
+              <p className="mt-2 text-gray-600">{recipe.summary}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
